@@ -102,7 +102,10 @@ export class Message {
     <small>sent by ${this.fromName}</small>
     <small>${this.date.toLocaleDateString()}</small>
     <div>
-        <img src="${this.imagePath()}" alt="${this.imagePath()}" />
+        <audio controls>
+          <source src="${this.imagePath()}" type="audio/wav" />
+          <img src="${this.imagePath()}" alt="${this.imagePath()}" />
+        </audio>
         <pre>
             ${this.text}
         </pre>
