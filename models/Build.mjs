@@ -4,20 +4,15 @@ import {RSS} from "./RSS.mjs";
 
 export class Build {
     constructor(newMessages = []) {
-        const x = async () => {
-            let msgs;
-            if (newMessages.length) {
-                msgs = Promise.resolve(newMessages)
-            } else {
-                msgs = Message.getAll();
-            }
-            return msgs.then(async (msgs) => {
-                await Build.createPages(msgs);
-                await Build.createIndex(msgs);
-                // await Build.rss(msgs)
-            })
-        }
-        this.done = x();
+        this.done = Message.getAll().then(async (msgs) => {
+            await Build.createPages(msgs.filter(m => {
+                return newMessages.some((n) => {
+                    return n.subject === m.subject && n.text === m.text
+                })
+            }));
+            await Build.createIndex(msgs);
+            // await Build.rss(msgs)
+        })
     }
 
     static rss = async (msgs) => {
