@@ -5,16 +5,29 @@ import { sequelize, DBMessage } from "./db.mjs";
 class Attachment {
     constructor(id, mimeType) {
         this.id = id;
+        this.mimeType = mimeType;
         this.pathToFile = `../attachments/${id}`;
     }
 
-    element = () => {
-        const x = this.id.split('.');
-        const extenstion = x[x.length - 1];
-        switch (extension) {
-            default:
-                return "<small>no attachment</small>"
+    render = () => {
+        if (this.id === null || !this.mimeType) {
+            return "";
         }
+
+        if (this.mimeType.includes('image')) {
+            return `<img src="${this.pathToFile}" alt="${this.pathToFile}"/>`
+        }
+
+        if (this.mimeType.includes('audio')) {
+            return `<audio
+                controls
+                src="${this.pathToFile}">
+                Your browser does not support the
+                <code>audio</code> element.
+            </audio>`
+        }
+
+        return `<a href="${this.pathToFile}">${this.id}</a>`
     }
 }
 
@@ -42,7 +55,6 @@ export class Message {
         this.toEmail = toEmail;
         this.attachment_id = attachment_id;
         this.attachment_mimetype = attachment_mimetype;
-        console.log({attachment_mimetype})
         this.id = id;
     }
 
@@ -57,7 +69,7 @@ export class Message {
         attachments = []
     }) {
         const attachment = attachments[0];
-        console.dir(attachment)
+
         const attachment_mimetype = attachment.contentType
         const attachment_id = crypto.randomBytes(16).toString("hex");
         const data = {
@@ -93,7 +105,7 @@ export class Message {
     }
 
     attachment = () => {
-        return new Attachment(this.attachment_id)
+        return new Attachment(this.attachment_id, this.attachment_mimetype)
     }
 
     toHTML = () => {
@@ -103,9 +115,7 @@ export class Message {
     <small>sent by ${this.fromName}</small>
     <small>${this.date.toLocaleDateString()}</small>
     <div>
-        <audio controls>
-          <source src="${this.imagePath()}" type="audio/wav" />
-        </audio>
+        {this.attachment().render()}
         <pre>
             ${this.text}
         </pre>
