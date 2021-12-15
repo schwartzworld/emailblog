@@ -1,5 +1,6 @@
 import { Client } from 'yapople';
 import env from 'dotenv';
+import { Message } from './models/Message.mjs'
 
 env.config();
 
@@ -12,18 +13,15 @@ const client = new Client({
   password: process.env.PASSWORD,
 });
 
-const isRealMessage = (message) => {
-	const first3 = message.subject.slice(0, 3);
-	console.log({first3});
-	return first3 === 'xyz';
-}
 
 const checkMessages = async () => {
 	try {
 	    await client.connect();
 	    const messages = await client.retrieveAll();
 	    await client.quit();
-	    return messages.filter(isRealMessage);
+	    return messages.map(m => {
+	        return Message.create(m)
+        });
     } catch (e) {
     	console.error(e);
     }
