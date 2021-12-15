@@ -115,7 +115,7 @@ export class Message {
     <small>sent by ${this.fromName}</small>
     <small>${this.date.toLocaleDateString()}</small>
     <div>
-        {this.attachment().render()}
+        ${this.attachment().render()}
         <pre>
             ${this.text}
         </pre>
