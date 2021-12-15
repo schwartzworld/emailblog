@@ -36,7 +36,7 @@ export class Message {
         html,  // encodedstring
         text, // string
         date, // Date obj
-        subject, // string
+        subject = "(no subject)", // string
         fromName,
         fromEmail,
         toName,
