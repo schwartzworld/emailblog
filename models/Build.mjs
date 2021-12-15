@@ -3,12 +3,21 @@ import {Message} from "./Message.mjs";
 import {RSS} from "./RSS.mjs";
 
 export class Build {
-    constructor() {
-        this.done = Message.getAll().then(async (msgs) => {
-            await Build.createPages(msgs);
-            await Build.createIndex(msgs);
-            // await Build.rss(msgs)
-        })
+    constructor(newMessages = []) {
+        const x = async () => {
+            let msgs;
+            if (newMessages.length) {
+                msgs = Promise.resolve(newMessages)
+            } else {
+                msgs = Message.getAll();
+            }
+            return msgs.then(async (msgs) => {
+                await Build.createPages(msgs);
+                await Build.createIndex(msgs);
+                // await Build.rss(msgs)
+            })
+        }
+        this.done = x();
     }
 
     static rss = async (msgs) => {
