@@ -70,7 +70,7 @@ export class Message {
     }) {
         const attachment = attachments[0];
 
-        const attachment_mimetype = attachment.contentType
+        const attachment_mimetype = attachment?.contentType || null;
         const attachment_id = crypto.randomBytes(16).toString("hex");
         const data = {
             html: encodeURIComponent(html),
@@ -87,10 +87,12 @@ export class Message {
 
         sequelize.sync().then(async () => {
             const msg = await DBMessage.create(data).then(() => {
-                fs.writeFile('./attachments/' + attachment_id, attachment.content, (e) => {
-                    if (e) console.error(e);
-                    console.log(attachment_id + " saved.");
-                })
+                if (attachment_mimetype) {
+                    fs.writeFile('./attachments/' + attachment_id, attachment.content, (e) => {
+                        if (e) console.error(e);
+                        console.log(attachment_id + " saved.");
+                    })
+                }
             });
         });
         return new Message(data)
