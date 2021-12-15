@@ -1,9 +1,11 @@
-import { Model, DataTypes } from 'sequelize';
 import fs from 'fs';
 import crypto from 'crypto';
-import {sequelize} from "../sequelize.mjs";
+import {DataTypes, Model, Sequelize} from "sequelize";
 
-class DBMessage extends Model {}
+
+export const sequelize = new Sequelize('sqlite:messages.db');
+
+export class DBMessage extends Model {}
 
 DBMessage.init({
     html: DataTypes.STRING,
@@ -20,6 +22,7 @@ DBMessage.init({
     },
     attachment_id: DataTypes.STRING
 }, { sequelize, modelName: 'message' });
+
 
 export class Message {
     constructor({
@@ -99,6 +102,7 @@ export class Message {
     }
 
     static getAll = async () => {
+        await sequelize.sync()
         const messages = await DBMessage.findAll();
         return messages.map(m => {
             return new Message(m.dataValues);

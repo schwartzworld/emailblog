@@ -19,7 +19,7 @@ const checkMessages = async () => {
 	    await client.connect();
 	    const messages = await client.retrieveAll();
 	    await client.quit();
-	    return messages.map(m => {
+	    return messages.filter(m => m.from[0].address.includes('hankpiece')).map(m => {
 	        return Message.create(m)
         });
     } catch (e) {
