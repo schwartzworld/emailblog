@@ -23,7 +23,7 @@ export class Build {
 
     static createIndex = (msgs = []) => {
         const slugs = [...msgs].reverse().map(m => {
-            return `<li><a href="./build/${m.id}.html">${m.subject}</a><br/><small>${m.date.toLocaleString()}</small></li>`
+            return `<li><a href="./build/${m.id}.html">${m.subject || "(no subject)"}</a><br/><small>${m.date.toLocaleString()}</small></li>`
         }).join('\n');
 
         const innerHTML = `

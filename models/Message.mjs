@@ -113,7 +113,7 @@ export class Message {
     toHTML = () => {
         return `
 <div>
-    <h3>${this.subject || "(no subject)"}</h3>
+    <h3>${this.subject}</h3>
     <small>sent by ${this.fromName}</small>
     <small>${this.date.toLocaleDateString()}</small>
     <div>
