@@ -2,6 +2,22 @@ import fs from 'fs';
 import crypto from 'crypto';
 import { sequelize, DBMessage } from "./db.mjs";
 
+class Attachment {
+    constructor(id, mimeType) {
+        this.id = id;
+        this.pathToFile = `../attachments/${id}`;
+    }
+
+    element = () => {
+        const x = this.id.split('.');
+        const extenstion = x[x.length - 1];
+        switch (extension) {
+            default:
+                return "<small>no attachment</small>"
+        }
+    }
+}
+
 export class Message {
     constructor({
         html,  // encodedstring
@@ -13,6 +29,7 @@ export class Message {
         toName,
         toEmail,
         attachment_id = null,
+        attachment_mimetype = null,
         id,
     }) {
         this.html = html;
@@ -24,6 +41,8 @@ export class Message {
         this.toName = toName;
         this.toEmail = toEmail;
         this.attachment_id = attachment_id;
+        this.attachment_mimetype = attachment_mimetype;
+        console.log({attachment_mimetype})
         this.id = id;
     }
 
@@ -38,9 +57,8 @@ export class Message {
         attachments = []
     }) {
         const attachment = attachments[0];
-        const split = attachment.generatedFileName.split('.')
-        const extension = split[split.length - 1];
-        const attachment_id = `${crypto.randomBytes(16).toString("hex")}.${extension}`;
+        const attachment_mimetype = attachment.mimeType
+        const attachment_id = crypto.randomBytes(16).toString("hex");
         const data = {
             html: encodeURIComponent(html),
             text,
@@ -51,6 +69,7 @@ export class Message {
             toEmail,
             toName,
             attachment_id,
+            attachment_mimetype,
         };
 
         sequelize.sync().then(async () => {

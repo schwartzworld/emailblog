@@ -17,5 +17,6 @@ DBMessage.init({
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4 // Or DataTypes.UUIDV1
     },
-    attachment_id: DataTypes.STRING
+    attachment_id: DataTypes.STRING,
+    attachment_mimetype: DataTypes.STRING
 }, { sequelize, modelName: 'message' });
