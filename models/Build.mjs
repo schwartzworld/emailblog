@@ -22,13 +22,15 @@ export class Build {
     }
 
     static createIndex = (msgs = []) => {
-        const slugs = [...msgs].reverse().map(m => {
+        const reversed = [...msgs].reverse();
+        const slugs = reversed.map(m => {
             return `<li><a href="./build/${m.id}.html">${m.subject || "(no subject)"}</a><br/><small>${m.date.toLocaleString()}</small></li>`
         }).join('\n');
 
         const innerHTML = `
         <h1>Generated Email Blog</h1>
-        <h2>Table of Contents</h2>
+        ${reversed[0].toHTML()}
+        <h3>Archive</h3>
         <ul>
             ${slugs}
         </ul>
