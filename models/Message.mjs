@@ -57,6 +57,7 @@ export class Message {
         attachments = []
     }) {
         const attachment = attachments[0];
+        console.dir(attachment)
         const attachment_mimetype = attachment.mimeType
         const attachment_id = crypto.randomBytes(16).toString("hex");
         const data = {
@@ -104,7 +105,6 @@ export class Message {
     <div>
         <audio controls>
           <source src="${this.imagePath()}" type="audio/wav" />
-          <img src="${this.imagePath()}" alt="${this.imagePath()}" />
         </audio>
         <pre>
             ${this.text}
