@@ -25,11 +25,11 @@ export class RSS {
             }
         });
 
-        msgs.forEach(m => {
+       /* msgs.forEach(m => {
             feed.addItem({
                 title: m.subject || "(no subject)",
                 id: m.id,
-                link: `/build/${m.id}.html`,
+                link: `https://schwartz.world/build/${m.id}.html`,
                 description: m.text,
                 content: m.toHTML(),
                 author: [
@@ -41,8 +41,8 @@ export class RSS {
                 date: m.date,
                 image: m.image()
             });
-        });
+        });*/
 
-        console.log(feed)
+        console.log(feed.rss2())
     }
 }
