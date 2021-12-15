@@ -7,7 +7,7 @@ export class Build {
         this.done = Message.getAll().then(async (msgs) => {
             await Build.createPages(msgs);
             await Build.createIndex(msgs);
-            await Build.rss(msgs)
+            // await Build.rss(msgs)
         })
     }
 
