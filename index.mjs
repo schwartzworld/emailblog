@@ -16,5 +16,5 @@ const main = async () => {
 }
 
 main().then(() => {
-    setInterval(main, 1200000)
+    setInterval(main, 300000)
 })
