@@ -58,7 +58,7 @@ export class Message {
     }) {
         const attachment = attachments[0];
         console.dir(attachment)
-        const attachment_mimetype = attachment.mimeType
+        const attachment_mimetype = attachment.contentType
         const attachment_id = crypto.randomBytes(16).toString("hex");
         const data = {
             html: encodeURIComponent(html),
