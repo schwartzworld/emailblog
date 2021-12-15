@@ -1,28 +1,6 @@
 import fs from 'fs';
 import crypto from 'crypto';
-import {DataTypes, Model, Sequelize} from "sequelize";
-
-
-export const sequelize = new Sequelize('sqlite:messages.db');
-
-export class DBMessage extends Model {}
-
-DBMessage.init({
-    html: DataTypes.STRING,
-    text: DataTypes.STRING,
-    subject: DataTypes.STRING,
-    date: DataTypes.DATE,
-    fromName: DataTypes.STRING,
-    fromEmail: DataTypes.STRING,
-    toName: DataTypes.STRING,
-    toEmail: DataTypes.STRING,
-    uuid: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4 // Or DataTypes.UUIDV1
-    },
-    attachment_id: DataTypes.STRING
-}, { sequelize, modelName: 'message' });
-
+import { sequelize, DBMessage } from "./db.mjs";
 
 export class Message {
     constructor({
@@ -58,21 +36,6 @@ export class Message {
         from: [{ address: fromEmail, name: fromName }], // [{ address: string, name: string }]
         to: [{ address: toEmail, name: toName }], // [{ address: string, name: string }]
         attachments = []
-        /*
-        [
-            {
-                contentType: 'video/mp2t',
-                fileName: 'index.ts',
-                contentDisposition: 'attachment',
-                transferEncoding: 'base64',
-                contentId: 'f_kx7nf8ht0',
-                generatedFileName: 'index.ts',
-                checksum: '536a395659048a7b56f1ada5c98b179f',
-                length: 429,
-                content: <Buffer 2f 2f 20 74 73 6c 69 6e 74 3a 64 69 73 61 62 6c 65 0a 2f 2a 2a 0a 20 2a 20 77 68 6f 6c 65 73 61 6c 65 2d 6f 66 66 65 72 0a 20 2a 20 47 65 6e 65 72 61 ... 379 more bytes>
-            }
-        ]
-        */
     }) {
         const attachment = attachments[0];
         const split = attachment.generatedFileName.split('.')
@@ -107,6 +70,10 @@ export class Message {
         return messages.map(m => {
             return new Message(m.dataValues);
         })
+    }
+
+    attachment = () => {
+        return new Attachment(this.attachment_id)
     }
 
     toHTML = () => {
