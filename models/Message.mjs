@@ -9,12 +9,13 @@ class Attachment {
         this.pathToFile = `../attachments/${id}`;
     }
 
-    render = () => {
+    render = (isIndex) => {
         if (this.id === null || !this.mimeType) {
             return "";
         }
 
         if (this.mimeType.includes('image')) {
+            if (isIndex) return `<img class="preview" src="${this.pathToFile}" alt="${this.pathToFile}"/>`
             return `<img src="${this.pathToFile}" alt="${this.pathToFile}"/>`
         }
 
@@ -110,14 +111,14 @@ export class Message {
         return new Attachment(this.attachment_id, this.attachment_mimetype)
     }
 
-    toHTML = () => {
+    toHTML = (isIndex = false) => {
         return `
 <div>
     <h3>${this.subject}</h3>
     <small>sent by ${this.fromName}</small>
     <small>${this.date.toLocaleDateString()}</small>
     <div>
-        ${this.attachment().render()}
+        ${this.attachment().render(isIndex)}
         <pre>
             ${this.text}
         </pre>

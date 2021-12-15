@@ -30,7 +30,7 @@ export class Build {
 
         const innerHTML = `
         <h1>Generated Email Blog</h1>
-        ${first.toHTML()}
+        ${first.toHTML(true)}
         <h3>Archive</h3>
         <ul>
             ${slugs}
