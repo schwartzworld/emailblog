@@ -6,7 +6,11 @@ class Attachment {
     constructor(id, mimeType) {
         this.id = id;
         this.mimeType = mimeType;
-        this.pathToFile = `../attachments/${id}`;
+        this.pathToFile = `/attachments/${id}`;
+    }
+
+    isAnImage = () => {
+        return this.mimeType.includes('image');
     }
 
     render = (isIndex) => {
@@ -14,7 +18,7 @@ class Attachment {
             return "";
         }
 
-        if (this.mimeType.includes('image')) {
+        if (this.isAnImage()) {
             if (isIndex) return `<img class="preview" src="${this.pathToFile}" alt="${this.pathToFile}"/>`
             return `<img src="${this.pathToFile}" alt="${this.pathToFile}"/>`
         }
@@ -59,7 +63,6 @@ export class Message {
         this.id = id;
     }
 
-    imagePath = () => this.attachment_id ? `../attachments/${this.attachment_id}` : null;
     static create({
         html,  // htmlstring
         text, // string
@@ -109,6 +112,14 @@ export class Message {
 
     attachment = () => {
         return new Attachment(this.attachment_id, this.attachment_mimetype)
+    }
+
+    image = () => {
+        const a = this.attachment();
+        if (a.isAnImage) {
+            return a;
+        }
+        return null;
     }
 
     toHTML = (isIndex = false) => {

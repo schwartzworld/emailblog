@@ -1,12 +1,18 @@
 import fs from "fs";
 import {Message} from "./Message.mjs";
+import {RSS} from "./RSS.mjs";
 
 export class Build {
     constructor() {
         this.done = Message.getAll().then(async (msgs) => {
             await Build.createPages(msgs);
             await Build.createIndex(msgs);
+            await Build.rss(msgs)
         })
+    }
+
+    static rss = async (msgs) => {
+        await RSS.buildMain(msgs)
     }
 
     static createPages = async (msgs = []) => {
