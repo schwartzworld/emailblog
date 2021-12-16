@@ -1,6 +1,6 @@
 import fs from "fs";
 import {Message} from "./Message.mjs";
-import {RSS} from "./RSS.mjs";
+import { RSS } from "./RSS.mjs";
 
 export class Build {
     constructor(newMessages = []) {
