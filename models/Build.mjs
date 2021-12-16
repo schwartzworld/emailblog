@@ -6,11 +6,7 @@ export class Build {
     constructor(newMessages = []) {
         this.done = Message.getAll().then(async (msgs) => {
             console.log(msgs.length)
-            await Build.createPages(msgs.filter(m => {
-                return newMessages.some((n) => {
-                    return n.subject === m.subject && n.text === m.text
-                })
-            }));
+            await Build.createPages();
             await Build.createIndex(msgs);
             // await Build.rss(msgs)
         })
