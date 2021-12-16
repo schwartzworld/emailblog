@@ -130,9 +130,9 @@ export class Message {
     <small>${this.date.toLocaleDateString()}</small>
     <div>
         ${this.attachment().render(isIndex)}
-        <pre>
-            ${this.text}
-        </pre>
+        
+        ${this.html}
+      
     </div>
 </div>
 `
