@@ -9,7 +9,7 @@ export class Build {
             await Build.createPages(msgs);
             await Build.createIndex(msgs);
             const feed = await RSS(msgs);
-            console.log(JSON.stringify(feed, null, '\t'))
+            console.log(feed)
         })
     }
 
