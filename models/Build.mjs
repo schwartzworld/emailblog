@@ -6,7 +6,7 @@ export class Build {
     constructor(newMessages = []) {
         this.done = Message.getAll().then(async (msgs) => {
             console.log(msgs.length)
-            await Build.createPages();
+            await Build.createPages(msgs);
             await Build.createIndex(msgs);
             // await Build.rss(msgs)
         })
