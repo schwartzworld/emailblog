@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Thu, 16 Dec 2021 03:09:59 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Dec 2021 15:04:12 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -176,6 +176,16 @@ it fail, any change on BE will require fixing UI
 </description>
   <link>/build/13.html</link>
   <pubDate>Wed, 15 Dec 2021 22:33:08 GMT</pubDate>
+</item>
+
+<item>
+  <title>Oscar</title>
+  <description>[image: Screen Shot 2021-12-16 at 7.14.43 AM.png][image: Screen Shot
+2021-12-16 at 7.14.30 AM.png][image: Screen Shot 2021-12-16 at 7.14.25
+AM.png][image: Screen Shot 2021-12-16 at 7.12.10 AM.png]
+</description>
+  <link>/build/14.html</link>
+  <pubDate>Thu, 16 Dec 2021 12:26:14 GMT</pubDate>
 </item>
 
       </channel>
