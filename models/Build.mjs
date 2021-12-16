@@ -8,7 +8,8 @@ export class Build {
             console.log(msgs.length)
             await Build.createPages(msgs);
             await Build.createIndex(msgs);
-            // await Build.rss(msgs)
+            const feed = await RSS(msgs);
+            console.log(JSON.stringify(feed, null, '\t'))
         })
     }
 
