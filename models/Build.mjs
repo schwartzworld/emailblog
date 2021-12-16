@@ -12,10 +12,6 @@ export class Build {
         })
     }
 
-    static rss = async (msgs) => {
-        await RSS.buildMain(msgs)
-    }
-
     static createPages = async (msgs = []) => {
         return Promise.all(msgs.map(m => {
             return new Promise(res => {

@@ -67,7 +67,7 @@ export class Message {
         html,  // htmlstring
         text, // string
         date,
-        subject = "", // string
+        subject = "(No Subject)", // string
         from: [{ address: fromEmail, name: fromName }], // [{ address: string, name: string }]
         to: [{ address: toEmail, name: toName }], // [{ address: string, name: string }]
         attachments = []
@@ -123,9 +123,10 @@ export class Message {
     }
 
     toHTML = (isIndex = false) => {
+        const headline = isIndex ? `<a href="/build/${this.id}.html">${this.subject}</a>`: this.subject;
         return `
 <div>
-    <h3>${this.subject}</h3>
+    <h3>${headline}</h3>
     <small>sent by ${this.fromName}</small>
     <small>${this.date.toLocaleDateString()}</small>
     <div>
