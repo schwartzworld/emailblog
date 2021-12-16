@@ -10,10 +10,9 @@ const createEntry = ({ title, description, link, pubDate }) => `
 `
 
 export const RSS = async (msgs = []) => {
-    console.log("OH NO OH NO" + msgs.length)
     const entries = msgs.map(m => {
         return createEntry({
-            title: m.subject,
+            title: m.subject || m.date.toUTCString(),
             description: m.text,
             link: `/build/${m.id}.html`,
             pubDate: m.date.toUTCString()
