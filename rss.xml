@@ -1,0 +1,183 @@
+
+    <rss version="2.0">
+      <channel>
+        <title>Generated Blog</title>
+        <description>Description here</description>
+        <link>http://schwartz.world/whatever</link>
+        <copyright>Copyright 2021, Ian Schwartz</copyright>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 16 Dec 2021 03:08:20 GMT</lastBuildDate>
+        <webMaster>ian@schwartz.world</webMaster>
+        <generator>My own damn software</generator>
+        <image>
+          <url>http://www.feedforall.com/ffalogo48x48.gif</url>
+          <title>FeedForAll Sample Feed</title>
+          <link>http://www.feedforall.com/industry-solutions.htm</link>
+          <description>FeedForAll Sample Feed</description>
+          <width>48</width>
+          <height>48</height>
+        </image>
+        
+<item>
+  <title></title>
+  <description>dsnfiaksdfj
+</description>
+  <link>/build/1.html</link>
+  <pubDate>Wed, 15 Dec 2021 18:32:14 GMT</pubDate>
+</item>
+
+<item>
+  <title>Maddie</title>
+  <description>
+</description>
+  <link>/build/2.html</link>
+  <pubDate>Wed, 15 Dec 2021 18:42:15 GMT</pubDate>
+</item>
+
+<item>
+  <title></title>
+  <description>
+</description>
+  <link>/build/3.html</link>
+  <pubDate>Wed, 15 Dec 2021 18:44:53 GMT</pubDate>
+</item>
+
+<item>
+  <title>Some thoughts</title>
+  <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
+ante lobortis, lobortis purus sit amet, efficitur ante. Integer facilisis
+felis vitae rhoncus commodo. Sed eget neque turpis. Donec nec est id sem
+semper accumsan. Aenean congue auctor mauris. Aliquam vitae fermentum
+velit. Nam commodo nunc et velit vehicula vestibulum. Cras vulputate ligula
+lectus, et laoreet lorem interdum ac. In est ante, posuere in elit sit
+amet, tempus sagittis erat. Proin orci neque, tincidunt at eros id, iaculis
+volutpat elit. Integer eu interdum risus. Proin sit amet sapien vel nulla
+consectetur consectetur vel vel magna. Maecenas posuere tincidunt risus id
+venenatis.
+
+Fusce a nunc lectus. Proin convallis consectetur nibh vel vehicula.
+Suspendisse id commodo nulla. Ut neque est, pulvinar in nulla pellentesque,
+suscipit bibendum sem. Phasellus dictum lacinia neque, et vehicula tortor
+feugiat at. Fusce et placerat nisi. Donec congue maximus nibh, ac tincidunt
+nisi varius a. Aliquam et magna gravida, finibus dolor a, porttitor arcu.
+Donec at mattis felis.
+
+Curabitur vel lorem volutpat, facilisis dolor id, consectetur nisi.
+Vestibulum urna sem, bibendum et nulla sed, rhoncus vulputate leo. Duis eu
+egestas sapien. Proin tincidunt imperdiet interdum. Nunc viverra nec mi ut
+congue. Vivamus lacinia sem vitae nibh varius convallis. Praesent erat
+metus, ultrices consectetur odio et, ornare egestas velit. Vestibulum
+ullamcorper blandit feugiat. Vivamus a ex egestas, convallis urna in,
+tempus lorem. Integer posuere ultrices bibendum. Sed bibendum commodo
+dolor, et suscipit urna egestas ac. Etiam eget est a augue sodales
+pellentesque. Pellentesque sed venenatis ipsum. Class aptent taciti
+sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Praesent rhoncus lectus in eros volutpat, id sodales libero commodo.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+ridiculus mus. In quam nibh, euismod porttitor turpis ac, lacinia dapibus
+turpis. Vestibulum tortor diam, eleifend eu quam sed, aliquam suscipit
+massa. In pretium tellus commodo urna porta, in vulputate orci
+sollicitudin. Duis ac risus quis diam mattis vulputate et a sem. Duis
+semper ipsum turpis, sed congue mi fermentum eu. Donec in tincidunt dui,
+vel ultrices nulla. Nulla sollicitudin ullamcorper lectus, non convallis
+purus blandit sed. Donec pretium pulvinar eros, congue vestibulum mauris
+maximus id. Nullam condimentum turpis nibh, id varius ipsum tincidunt nec.
+Nullam luctus, lectus a tempus vestibulum, lacus elit porttitor urna, et
+cursus turpis tellus nec est. Praesent sagittis augue mauris, ac gravida
+nisl condimentum vel.
+
+Donec vitae sem a dui molestie pellentesque. Duis bibendum condimentum
+finibus. Mauris eget nisi et ligula viverra ultrices ac sit amet lacus.
+Quisque eget augue ac felis consectetur ornare. Suspendisse ac sapien
+egestas sapien scelerisque auctor ac eget erat. Sed maximus convallis
+semper. Proin condimentum dolor lectus, at tincidunt leo dapibus id.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+cubilia curae; Vivamus sollicitudin euismod lorem vel egestas. Pellentesque
+suscipit finibus eros tincidunt faucibus. Praesent quis eros nunc. Aliquam
+auctor nunc sit amet bibendum placerat. Donec vestibulum est ut turpis
+efficitur faucibus. Curabitur hendrerit urna eu sem feugiat hendrerit.
+Phasellus eu justo magna. Integer posuere luctus blandit.
+</description>
+  <link>/build/4.html</link>
+  <pubDate>Wed, 15 Dec 2021 18:57:40 GMT</pubDate>
+</item>
+
+<item>
+  <title>Yes</title>
+  <description>
+</description>
+  <link>/build/5.html</link>
+  <pubDate>Wed, 15 Dec 2021 18:59:09 GMT</pubDate>
+</item>
+
+<item>
+  <title>Gingerbread</title>
+  <description>I'd not fail, as it will break the whole pipeline, because now if BE people
+change something, they don't think about UI, and if it's not a breaking
+change then we are good to deploy, we are not blocking anyone, if we make
+it fail, any change on BE will require fixing UI
+</description>
+  <link>/build/6.html</link>
+  <pubDate>Wed, 15 Dec 2021 19:12:55 GMT</pubDate>
+</item>
+
+<item>
+  <title>Nayiri</title>
+  <description>
+</description>
+  <link>/build/7.html</link>
+  <pubDate>Wed, 15 Dec 2021 19:18:36 GMT</pubDate>
+</item>
+
+<item>
+  <title>Rambling</title>
+  <description>
+</description>
+  <link>/build/8.html</link>
+  <pubDate>Wed, 15 Dec 2021 19:46:50 GMT</pubDate>
+</item>
+
+<item>
+  <title>asd</title>
+  <description>asdasd
+</description>
+  <link>/build/9.html</link>
+  <pubDate>Wed, 15 Dec 2021 20:49:12 GMT</pubDate>
+</item>
+
+<item>
+  <title>kcjsnfl;s</title>
+  <description>lksdjfsildfdsfsdfeq
+</description>
+  <link>/build/10.html</link>
+  <pubDate>Wed, 15 Dec 2021 20:52:47 GMT</pubDate>
+</item>
+
+<item>
+  <title></title>
+  <description>I love you
+</description>
+  <link>/build/11.html</link>
+  <pubDate>Wed, 15 Dec 2021 21:14:19 GMT</pubDate>
+</item>
+
+<item>
+  <title>Panama</title>
+  <description>
+</description>
+  <link>/build/12.html</link>
+  <pubDate>Wed, 15 Dec 2021 21:43:34 GMT</pubDate>
+</item>
+
+<item>
+  <title>Sushi</title>
+  <description> Is awesome
+</description>
+  <link>/build/13.html</link>
+  <pubDate>Wed, 15 Dec 2021 22:33:08 GMT</pubDate>
+</item>
+
+      </channel>
+    </rss>
+    

@@ -1,6 +1,6 @@
-import fs from 'fs';
 import crypto from 'crypto';
 import { sequelize, DBMessage } from "./db.mjs";
+import {asyncWrite} from "../util/FS.mjs";
 
 class Attachment {
     constructor(id, mimeType) {
@@ -92,10 +92,7 @@ export class Message {
         sequelize.sync().then(async () => {
             const msg = await DBMessage.create(data).then(() => {
                 if (attachment_mimetype) {
-                    fs.writeFile('./attachments/' + attachment_id, attachment.content, (e) => {
-                        if (e) console.error(e);
-                        console.log(attachment_id + " saved.");
-                    })
+                    asyncWrite('./attachments/' + attachment_id, attachment.content)
                 }
             });
         });

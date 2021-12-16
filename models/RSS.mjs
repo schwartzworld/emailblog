@@ -1,3 +1,5 @@
+import {asyncWrite} from "../util/FS.mjs";
+
 const createEntry = ({ title, description, link, pubDate }) => `
 <item>
   <title>${title}</title>
@@ -7,7 +9,8 @@ const createEntry = ({ title, description, link, pubDate }) => `
 </item>
 `
 
-export const RSS = async (msgs) => {
+export const RSS = async (msgs = []) => {
+    console.log("OH NO OH NO" + msgs.length)
     const entries = msgs.map(m => {
         return createEntry({
             title: m.subject,
@@ -16,7 +19,7 @@ export const RSS = async (msgs) => {
             pubDate: m.date.toUTCString()
         });
     }).join('');
-    return `
+    asyncWrite("./rss.xml", `
     <rss version="2.0">
       <channel>
         <title>Generated Blog</title>
@@ -38,7 +41,7 @@ export const RSS = async (msgs) => {
         ${entries}
       </channel>
     </rss>
-    `
+    `).then(() => console.log('rss done'))
 }
 /*
 <rss version="2.0">

@@ -1,27 +1,26 @@
-import fs from "fs";
 import {Message} from "./Message.mjs";
 import { RSS } from "./RSS.mjs";
+import {asyncWrite} from "../util/FS.mjs";
 
 export class Build {
     constructor(newMessages = []) {
         this.done = Message.getAll().then(async (msgs) => {
-            console.log(msgs.length)
+            console.log(1)
             await Build.createPages(msgs);
+            console.log(2)
+
             await Build.createIndex(msgs);
+            console.log(3)
             const feed = await RSS(msgs);
+            console.log(4)
+
             console.log(feed)
         })
     }
 
     static createPages = async (msgs = []) => {
         return Promise.all(msgs.map(m => {
-            return new Promise(res => {
-                fs.writeFile(`./build/${m.id}.html`, Build.wrapper('a site', m.toHTML()), (e) => {
-                    if (e) console.error(e);
-                    console.log(`${m.id}.html saved`);
-                    res();
-                })
-            })
+            return asyncWrite(`./build/${m.id}.html`, Build.wrapper('a site', m.toHTML()))
         }));
     }
 
@@ -41,13 +40,7 @@ export class Build {
         </ul>
         `
 
-        return new Promise(res => {
-            fs.writeFile("./index.html", Build.wrapper("Index", innerHTML), (e) => {
-                if (e) console.error(e);
-                console.log(`index done with ${slugs.length} links`)
-                res();
-            })
-        })
+        return asyncWrite("./index.html", Build.wrapper("Index", innerHTML))
     }
 
     static wrapper = (title, html) => {
