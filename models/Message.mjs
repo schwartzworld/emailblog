@@ -128,7 +128,7 @@ export class Message {
 <div>
     <h3>${headline}</h3>
     <small>sent by ${this.fromName}</small>
-    <small>${this.date.toLocaleDateString()}</small>
+    <small>${this.date.toLocaleString()}</small>
     <div>
         ${this.attachment().render(isIndex)}
         
