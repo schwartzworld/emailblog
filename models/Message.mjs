@@ -131,7 +131,7 @@ export class Message {
     <div>
         ${this.attachment().render(isIndex)}
         
-        ${this.html}
+        ${decodeURIComponent(this.html)}
       
     </div>
 </div>
