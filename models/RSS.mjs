@@ -15,7 +15,7 @@ export const RSS = async (msgs) => {
             link: `/build/${m.id}.html`,
             pubDate: m.date.toUTCString()
         });
-    })
+    }).join('');
     return `
     <rss version="2.0">
       <channel>
