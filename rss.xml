@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Dec 2021 14:31:29 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Dec 2021 14:36:32 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -24,6 +24,14 @@
 </description>
   <link>/build/1.html</link>
   <pubDate>Sat, 18 Dec 2021 14:30:00 GMT</pubDate>
+</item>
+
+<item>
+  <title>Maddie the Greyhound</title>
+  <description>If it fits, I sits!
+</description>
+  <link>/build/2.html</link>
+  <pubDate>Sat, 18 Dec 2021 14:34:43 GMT</pubDate>
 </item>
 
       </channel>
