@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Dec 2021 15:01:30 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Dec 2021 15:06:31 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -40,6 +40,30 @@
 </description>
   <link>/build/3.html</link>
   <pubDate>Sat, 18 Dec 2021 14:46:35 GMT</pubDate>
+</item>
+
+<item>
+  <title>What is this website?</title>
+  <description>An experiment, trying something out. The idea is to have a static site
+generator that is more convenient to use than a server rendered blog with
+an admin dashboard.
+
+Posts are sent via email. The app downloads the emails via POP3 and turns
+them into the posts you see here, committing them to the repo and pushing
+then up to GitHub. The frontend is served as static files by netlify.
+
+This site is a proof of concept, later implementations will include
+features like multiple rss feeds (including a podcast feed) as well as
+comments.
+
+Relying on email makes a lot of sense. It's a completely federated system
+that pretty much everybody has already bought into. It works well in
+situations with poor connectivity. POP3 is effectively a FIFO queue. Email
+the address, and your picture or audio recording will go live after the
+next build (every 5 minutes or so). Pretty cool if you ask me.
+</description>
+  <link>/build/4.html</link>
+  <pubDate>Sat, 18 Dec 2021 15:01:17 GMT</pubDate>
 </item>
 
       </channel>
