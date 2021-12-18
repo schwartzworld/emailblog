@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Dec 2021 14:46:30 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Dec 2021 14:51:31 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -32,6 +32,14 @@
 </description>
   <link>/build/2.html</link>
   <pubDate>Sat, 18 Dec 2021 14:34:43 GMT</pubDate>
+</item>
+
+<item>
+  <title>(No Subject)</title>
+  <description>
+</description>
+  <link>/build/3.html</link>
+  <pubDate>Sat, 18 Dec 2021 14:46:35 GMT</pubDate>
 </item>
 
       </channel>
