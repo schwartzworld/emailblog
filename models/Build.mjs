@@ -5,16 +5,10 @@ import {asyncWrite} from "../util/FS.mjs";
 export class Build {
     constructor(newMessages = []) {
         this.done = Message.getAll().then(async (msgs) => {
-            console.log(1)
             await Build.createPages(msgs);
-            console.log(2)
 
             await Build.createIndex(msgs);
-            console.log(3)
             const feed = await RSS(msgs);
-            console.log(4)
-
-            console.log(feed)
         })
     }
 
