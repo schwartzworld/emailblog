@@ -27,20 +27,22 @@ export class Build {
     static createIndex = (msgs = []) => {
         const reversed = [...msgs].reverse();
         const [first, ...rest] = reversed;
-        const slugs = rest.map(m => {
-            return `<li><a href="./build/${m.id}.html">${m.subject || "(no subject)"}</a><br/><small>${m.date.toLocaleString()}</small></li>`
-        }).join('\n');
+        if (first instanceof Message) {
 
-        const innerHTML = `
-        <h1>Generated Email Blog</h1>
-        ${first.toHTML(true)}
-        <h3>Archive</h3>
-        <ul>
-            ${slugs}
-        </ul>
-        `
+            const slugs = rest.map(m => {
+                return `<li><a href="./build/${m.id}.html">${m.subject || "(no subject)"}</a><br/><small>${m.date.toLocaleString()}</small></li>`
+            }).join('\n');
 
-        return asyncWrite("./index.html", Build.wrapper("Index", innerHTML))
+            const innerHTML = `
+            <h1>Generated Email Blog</h1>
+            ${first.toHTML(true)}
+            <h3>Archive</h3>
+            <ul>
+                ${slugs}
+            </ul>
+            `
+            return asyncWrite("./index.html", Build.wrapper("Index", innerHTML))
+        }
     }
 
     static wrapper = (title, html) => {
