@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Dec 2021 16:31:31 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Dec 2021 16:36:32 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -72,6 +72,14 @@ next build (every 5 minutes or so). Pretty cool if you ask me.
 </description>
   <link>/build/5.html</link>
   <pubDate>Sat, 18 Dec 2021 15:36:47 GMT</pubDate>
+</item>
+
+<item>
+  <title>You're too shy to shy, hush hush</title>
+  <description>
+</description>
+  <link>/build/6.html</link>
+  <pubDate>Sat, 18 Dec 2021 16:33:55 GMT</pubDate>
 </item>
 
       </channel>
