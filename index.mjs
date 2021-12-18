@@ -5,7 +5,7 @@ import child_process from "child_process";
 const main = async () => {
     const newMessages = await checkMessages();
     await new Build(newMessages).done;
-    child_process.exec(`git add -A && git commit -m "new build ${Date.now()}"`, (err, stdout, stderr) => {
+    child_process.exec(`git add -A && git commit -m "new build ${Date.now()}" && git push`, (err, stdout, stderr) => {
         if (err) {
             console.error(err);
             return;
