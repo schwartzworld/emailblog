@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Thu, 16 Dec 2021 22:20:57 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Dec 2021 14:24:46 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -120,14 +120,6 @@ it fail, any change on BE will require fixing UI
 </description>
   <link>/build/6.html</link>
   <pubDate>Wed, 15 Dec 2021 19:12:55 GMT</pubDate>
-</item>
-
-<item>
-  <title>Nayiri</title>
-  <description>
-</description>
-  <link>/build/7.html</link>
-  <pubDate>Wed, 15 Dec 2021 19:18:36 GMT</pubDate>
 </item>
 
 <item>
