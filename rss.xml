@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Dec 2021 18:01:30 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Dec 2021 18:06:32 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -96,6 +96,14 @@ next build (every 5 minutes or so). Pretty cool if you ask me.
 </description>
   <link>/build/8.html</link>
   <pubDate>Sat, 18 Dec 2021 17:43:40 GMT</pubDate>
+</item>
+
+<item>
+  <title>Maddie looking snootie</title>
+  <description>
+</description>
+  <link>/build/9.html</link>
+  <pubDate>Sat, 18 Dec 2021 18:02:48 GMT</pubDate>
 </item>
 
       </channel>
