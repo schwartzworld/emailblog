@@ -6,7 +6,7 @@
         <link>http://schwartz.world/whatever</link>
         <copyright>Copyright 2021, Ian Schwartz</copyright>
         <language>en-us</language>
-        <lastBuildDate>Sun, 19 Dec 2021 13:36:32 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Dec 2021 13:41:32 GMT</lastBuildDate>
         <webMaster>ian@schwartz.world</webMaster>
         <generator>My own damn software</generator>
         <image>
@@ -120,6 +120,16 @@ next build (every 5 minutes or so). Pretty cool if you ask me.
 </description>
   <link>/build/11.html</link>
   <pubDate>Sat, 18 Dec 2021 22:43:32 GMT</pubDate>
+</item>
+
+<item>
+  <title>Bookmarking this for later</title>
+  <description>Easily run Windows software on Linux with 🍷 Bottles! ⋅ Bottles
+
+https://usebottles.com/
+</description>
+  <link>/build/12.html</link>
+  <pubDate>Sun, 19 Dec 2021 12:23:50 GMT</pubDate>
 </item>
 
       </channel>
